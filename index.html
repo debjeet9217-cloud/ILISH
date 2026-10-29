@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="FONT/style.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/booking-pass.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4A1118">
+</head>
+
+<body>
+  <!-- entry animation html start -->
+  <div class="entry-animation-container">
+    <div class="entry-animation-container-inner"></div>
+  </div>
+  <!-- entry animation html end-->
+  <!-- Fixed Sticky Top Navigation Header -->
+  <header class="navbar" id="top">
+    <button class="nav-btn nav-menu-btn" id="navMenuBtn" type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="navDrawerBackdrop">
+      <svg class="hamburger-icon" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M1.5 2H18.5M1.5 7H18.5M1.5 12H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-menu-text">Menu</span>
+    </button>
+
+    <div class="nav-center">
+      <a href="#" class="logo-wrapper" aria-label="ILISH Home">
+        <img src="IMAGES/logo.webp" alt="ILISH Logo" class="logo-img">
+        <span class="logo-text-sub">ILISH</span>
+      </a>
+    </div>
+
+    <a href="reservation.html" class="nav-btn nav-reservation-btn" id="navReservationBtn" aria-label="Reservation">
+      <span class="reservation-text">Reservation</span>
+    </a>
+  </header>
+
+  <div class="hero-canvas">
+
+    <!-- Main Hero Stage -->
+    <main class="hero-stage">
+
+      <!-- Left Content -->
+      <section class="hero-left">
+        <h1 class="main-heading">
+          THE TASTE<br>
+          OF BENGAL
+        </h1>
+        <p class="sub-paragraph">
+          Experience the authentic flavors of<br>
+          Bengal from cherished classics to<br>
+          regional favourites, crafted with<br>
+          tradition and served with love.
+        </p>
+      </section>
+
+      <!-- Center Content (Alpona + Dish) -->
+      <div class="hero-center">
+        <img src="IMAGES/alpona.webp" alt="Alpona Background Motif" class="alpona-bg">
+        <img src="IMAGES/Gemini_Generated_Image_aahaaeaahaaeaaha.webp" alt="Bengali Fish Paturi" class="dish-img">
+      </div>
+
+      <!-- Right Content -->
+      <section class="hero-right">
+        <h2 class="sub-heading">
+          Authentic Recipes<br>
+          Timeless flavors
+        </h2>
+        <a href="menu.html" class="explore-btn" id="exploreMenuBtn">
+          <span>Explore Menu</span>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </section>
+
+    </main>
+
+    <!-- Bottom Mouse Scroll Icon -->
+    <a href="#signature-dishes" class="scroll-icon-container" aria-label="Scroll to discover Bengal">
+      <div class="mouse-icon">
+        <div class="mouse-dot"></div>
+      </div>
+      <span class="scroll-text">Scroll to discover Bengal</span>
+    </a>
+
+  </div>
+
+  <!-- Signature Dishes Section -->
+  <section class="signature-dishes-section" id="signature-dishes">
+    <div class="signature-stage">
+      <!-- Left Column -->
+      <div class="signature-left">
+        <div class="signature-tag">
+          <span class="tag-dot">&#9679;</span>
+          <span>SIGNATURE DISHES</span>
+        </div>
+        <h2 class="signature-title">
+          Flavors worth<br>remembering.
+        </h2>
+        <p class="signature-desc">
+          From cherished classics to regional favourites, every dish is prepared with tradition, the finest ingredients and a whole lot of love.
+        </p>
+      </div>
+
+      <!-- Center Column (Food Image Visual Hero) -->
+      <div class="signature-center">
+        <div class="dish-stage">
+          <!-- Subtle Alpona Watermark Background concentric with Dish -->
+          <img src="IMAGES/alpona.webp" alt="Alpona Watermark" class="signature-bg-alpona">
+          <img src="IMAGES/ChatGPT Image Aug 30, 2026, 03_25_11 AM.webp" alt="Doi Ilish" class="signature-dish-img"
+            id="sigDishImg">
+        </div>
+      </div>
+
+      <!-- Right Column (Dish Info → CTA → Secondary Controls) -->
+      <div class="signature-right">
+        <h3 class="dish-title" id="sigDishTitle">Doi Ilish</h3>
+        <div class="dish-subtitle" id="sigDishSubtitle">Bengal’s Pride</div>
+        <p class="dish-info" id="sigDishDesc">
+          Fresh Hilsa cooked in rich mustard sauce with green chillies — a timeless Bengali classic.
+        </p>
+
+        <a href="menu.html" class="signature-cta-btn" id="sigExploreMenuBtn">
+          <span>Explore Menu</span>
+          <span class="arrow">&rarr;</span>
+        </a>
+
+        <div class="signature-pagination">
+          <button class="pag-arrow pag-prev" id="sigPrevBtn" type="button" aria-label="Previous Dish">&lsaquo;</button>
+          <span class="pag-line"></span>
+          <span class="pag-counter" id="sigCounter">01 / 04</span>
+          <span class="pag-line"></span>
+          <button class="pag-arrow pag-next" id="sigNextBtn" type="button" aria-label="Next Dish">&rsaquo;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — BENGALI FOOD STORY (From River to Table Visual Journey) -->
+  <section class="food-story-section" id="food-story">
+    <img src="IMAGES/alpona.webp" alt="" class="food-story-alpona-bg" aria-hidden="true">
+    
+    <div class="food-story-container">
+      <div class="food-story-header">
+        <div class="signature-tag">
+          <span class="tag-dot">&#9679;</span>
+          <span>BENGALI FOOD STORY</span>
+        </div>
+        <h2 class="food-story-main-title">FROM RIVER TO TABLE</h2>
+        <p class="food-story-subtitle">How does Bengali food reach the table? A continuous journey through river, harvest, and tradition.</p>
+      </div>
+
+      <div class="food-story-path">
+        <!-- Continuous Journey Line -->
+        <div class="story-line"></div>
+
+        <!-- Step 01: THE RIVER -->
+        <div class="story-step-card story-step-left">
+          <div class="story-node-dot"></div>
+          <div class="story-step-media">
+            <img src="IMAGES/story_01_river.webp" alt="Bengal River & Fisherman" class="story-step-img">
+            <span class="story-step-number">01</span>
+          </div>
+          <div class="story-step-content">
+            <span class="story-step-subtag">Where it begins</span>
+            <h3 class="story-step-title">THE RIVER</h3>
+            <p class="story-step-desc">
+              Bengal's rivers have shaped the region's food traditions for generations, bringing fresh fish to everyday tables.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 02: THE FRESH CATCH -->
+        <div class="story-step-card story-step-right">
+          <div class="story-node-dot"></div>
+          <div class="story-step-media">
+            <img src="IMAGES/story_02_fish_catch.webp" alt="Fresh Harvest Fish" class="story-step-img">
+            <span class="story-step-number">02</span>
+          </div>
+          <div class="story-step-content">
+            <span class="story-step-subtag">From river to kitchen</span>
+            <h3 class="story-step-title">THE FRESH CATCH</h3>
+            <p class="story-step-desc">
+              Hilsa, Rui and Katla are carefully selected according to season, freshness and traditional Bengali cooking.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 03: THE MUSTARD -->
+        <div class="story-step-card story-step-left">
+          <div class="story-node-dot"></div>
+          <div class="story-step-media">
+            <img src="IMAGES/story_03_mustard_spices.webp" alt="Golden Mustard & Spices" class="story-step-img">
+            <span class="story-step-number">03</span>
+          </div>
+          <div class="story-step-content">
+            <span class="story-step-subtag">The flavour of Bengal</span>
+            <h3 class="story-step-title">THE MUSTARD</h3>
+            <p class="story-step-desc">
+              Sharp mustard, green chilli and fragrant spices create the unmistakable character of Bengali fish dishes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 04: THE BANANA LEAF -->
+        <div class="story-step-card story-step-right">
+          <div class="story-node-dot"></div>
+          <div class="story-step-media">
+            <img src="IMAGES/story_04_banana_leaf.webp" alt="Steamed Fish in Banana Leaf" class="story-step-img">
+            <span class="story-step-number">04</span>
+          </div>
+          <div class="story-step-content">
+            <span class="story-step-subtag">Wrapped in tradition</span>
+            <h3 class="story-step-title">THE BANANA LEAF</h3>
+            <p class="story-step-desc">
+              Paturi is wrapped in banana leaf and gently steamed, allowing the fish, mustard and spices to cook together.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 05: THE TABLE -->
+        <div class="story-step-card story-step-left">
+          <div class="story-node-dot"></div>
+          <div class="story-step-media">
+            <img src="IMAGES/story_05_maach_bhat.webp" alt="Bengali Dining Table" class="story-step-img">
+            <span class="story-step-number">05</span>
+          </div>
+          <div class="story-step-content">
+            <span class="story-step-subtag">Where the journey ends</span>
+            <h3 class="story-step-title">THE TABLE</h3>
+            <p class="story-step-desc">
+              The journey from river to kitchen finally becomes a shared Bengali meal — warm rice, fish and conversation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — THE BENGALI TABLE (Magazine Editorial Layout) -->
+  <section class="bengali-table-section" id="bengali-table">
+    <img src="IMAGES/alpona.webp" alt="" class="bengali-table-alpona" aria-hidden="true">
+
+    <div class="bengali-table-container">
+      <div class="bengali-table-stage">
+        <!-- Editorial Photo Anchor (Primary Visual Hero) -->
+        <div class="bengali-table-hero-frame">
+          <img src="IMAGES/bengali_table_editorial.webp" alt="Authentic Bengali family dining together sharing traditional food" class="bengali-table-img">
+        </div>
+
+        <!-- Integrated Caption & Story Panel (Reduced Card Weight) -->
+        <div class="bengali-table-editorial-card">
+          <span class="bengali-table-eyebrow">THE BENGALI TABLE</span>
+          <h2 class="bengali-table-heading">
+            A meal rooted in<br>Bengal.
+          </h2>
+          <p class="bengali-table-desc">
+            Bengali dining is more than food. It is a ritual of gathering, sharing and passing traditions from one generation to the next.
+          </p>
+          <a href="menu.html" class="bengali-table-cta" id="tableDiscoverBtn">
+            <span>DISCOVER THE EXPERIENCE</span>
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — THE FINAL SCENE (Cinematic Closing) -->
+  <section class="final-closing-section" id="closing">
+    <div class="final-closing-container">
+      <div class="final-closing-media">
+        <img src="IMAGES/bengali_closing_documentary.webp" alt="Intimate Bengali dining room at dusk after meal" class="final-closing-bg-img">
+        <div class="final-closing-vignette"></div>
+
+        <div class="final-closing-content">
+          <span class="final-closing-tag">THE FINAL SCENE</span>
+          <h2 class="final-closing-headline">
+            COME FOR THE FLAVOUR.<br>
+            STAY FOR THE STORY.
+          </h2>
+          
+          <div class="final-closing-action-group">
+            <a href="reservation.html" class="final-closing-cta-btn" id="finalReservationBtn">
+              <span>RESERVE YOUR TABLE</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL RESTAURANT FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <div class="footer-logo">
+            <img src="IMAGES/logo.webp" alt="Taste of Bengal Logo" class="footer-logo-img">
+            <span class="footer-logo-sub">ILISH</span>
+          </div>
+          <p class="footer-philosophy">
+            Crafted with tradition, stone-ground mustard, and cherished regional recipes passed through generations.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">VISIT</h4>
+          <p class="footer-text">
+            77 Park Street, Heritage District<br>
+            Kolkata, West Bengal 700016
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">HOURS</h4>
+          <ul class="footer-list">
+            <li><span>Lunch:</span> Tue – Sun, 12:00 PM – 3:30 PM</li>
+            <li><span>Dinner:</span> Tue – Sun, 6:30 PM – 10:30 PM</li>
+            <li><span>Mondays:</span> Closed</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">CONTACT</h4>
+          <p class="footer-text">
+            Table Reservations & Enquiries
+          </p>
+          <a href="tel:+919876543210" class="footer-contact-link">+91 98765 43210</a>
+          <a href="reservation.html" class="footer-contact-link" id="footerReservationLink" style="display:block; margin-top:0.8vh;">Reserve a Table &rarr;</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span class="footer-copyright">&copy; 2026 The Taste of Bengal. All rights reserved.</span>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link">Instagram</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#" class="footer-social-link">Journal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Site Navigation Menu Drawer -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <aside class="nav-drawer">
+      <!-- Faint Alpona Watermark in Bottom-Right Corner -->
+      <img src="IMAGES/alpona.webp" alt="" class="nav-drawer-faint-alpona" aria-hidden="true">
+
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <div class="drawer-brand-header">
+            <img src="IMAGES/logo.webp" alt="ILISH Logo" class="drawer-brand-logo" aria-hidden="true">
+            <span class="drawer-tag">ILISH</span>
+          </div>
+          <h2 class="drawer-title">EXPLORE BENGAL</h2>
+        </div>
+        <button class="close-drawer-btn" id="closeNavDrawerBtn" type="button" aria-label="Close menu">&times;</button>
+      </div>
+
+      <div class="drawer-divider"></div>
+
+      <nav class="nav-drawer-menu" aria-label="Main Navigation">
+        <!-- 01 — HOME -->
+        <a href="#top" class="nav-editorial-item active" data-nav-target="top">
+          <span class="nav-item-number">01</span>
+          <div class="nav-item-title-row">
+            <span class="nav-item-heading">HOME</span>
+            <span class="nav-item-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <span class="nav-item-subtext">Welcome to Bengal</span>
+        </a>
+
+        <!-- 02 — MENU -->
+        <a href="menu.html" class="nav-editorial-item">
+          <span class="nav-item-number">02</span>
+          <div class="nav-item-title-row">
+            <span class="nav-item-heading">MENU</span>
+            <span class="nav-item-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <span class="nav-item-subtext">Explore Bengali Flavours</span>
+        </a>
+
+        <!-- 03 — OUR STORY -->
+        <a href="#food-story" class="nav-editorial-item" data-nav-target="food-story">
+          <span class="nav-item-number">03</span>
+          <div class="nav-item-title-row">
+            <span class="nav-item-heading">OUR STORY</span>
+            <span class="nav-item-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <span class="nav-item-subtext">From River to Table</span>
+        </a>
+
+        <!-- 04 — RESERVATION -->
+        <a href="reservation.html" class="nav-editorial-item nav-reservation-cta">
+          <span class="nav-item-number">04</span>
+          <div class="nav-item-title-row">
+            <span class="nav-item-heading">RESERVATION</span>
+            <span class="nav-item-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <span class="nav-item-subtext">Reserve Your Table</span>
+        </a>
+      </nav>
+
+      <div class="drawer-divider"></div>
+
+      <div class="nav-drawer-footer-editorial">
+        <span class="nav-footer-brand">ILISH</span>
+        <a href="https://maps.google.com/?q=77+Park+Street+Kolkata" target="_blank" rel="noopener noreferrer" class="nav-footer-address">
+          77 Park Street, Kolkata
+        </a>
+        <a href="tel:+919876543210" class="nav-footer-phone">+91 98765 43210</a>
+        <div class="nav-footer-hours">
+          <span class="hours-label">HOURS:</span> Tue – Sun, 12 PM – 11 PM
+        </div>
+      </div>
+    </aside>
+  </div>
+
+
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification"></div>
+
+  <script src="JS/booking-pass.js"></script>
+  <script src="JS/main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+
+</html>

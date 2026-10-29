@@ -1,0 +1,71 @@
+/* Custom Font Declarations for PP Fragment */
+
+@font-face {
+  font-family: 'PP Fragment Glare Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('PPFragment-GlareRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Fragment Sans Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('PPFragment-SansRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Fragment Serif Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('PPFragment-SerifRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Fragment Text Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('PPFragment-TextRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Fragment Glare Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url('PPFragment-GlareLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Fragment Sans Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url('PPFragment-SansLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Fragment Serif Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url('PPFragment-SerifLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Fragment Glare ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  src: url('PPFragment-GlareExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Fragment Sans ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  src: url('PPFragment-SansExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Fragment Serif ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  src: url('PPFragment-SerifExtraBold.woff') format('woff');
+}

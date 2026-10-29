@@ -1,0 +1,482 @@
+/* ==========================================================================
+   ILISH · Taste of Bengal — Streamlined Dish Heritage Modal
+   UX Refined: 4-Level Information Hierarchy, App-Like Polish & Clean Aesthetics
+   ========================================================================== */
+
+.dish-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(18, 6, 8, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dish-modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dish-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  max-height: 90vh;
+  overflow: hidden;
+  background-color: #FAF5EE;
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(193, 125, 60, 0.25);
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  transform: scale(0.95) translateY(14px);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #382523;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+
+.dish-modal-backdrop.active .dish-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* Close Button */
+.dish-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(74, 17, 24, 0.08);
+  border: 1px solid rgba(74, 17, 24, 0.12);
+  color: #4A1118;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 30;
+  padding: 0;
+}
+
+.dish-modal-close:hover {
+  background: #4A1118;
+  color: #FAF5EE;
+  transform: rotate(90deg);
+}
+
+.dish-modal-close:focus-visible {
+  outline: 2px solid #C17D3C;
+  outline-offset: 2px;
+}
+
+/* Left Image Column (Food Visual Anchor) */
+.dish-modal-visual {
+  position: relative;
+  background-color: #1D070B;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dish-modal-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.dish-modal-visual:hover .dish-modal-img {
+  transform: scale(1.04);
+}
+
+.dish-modal-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(35, 9, 13, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #E2B77A;
+  border: 1px solid rgba(193, 125, 60, 0.4);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* Right Content Column */
+.dish-modal-content {
+  padding: 30px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  max-height: 90vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.dish-modal-content::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.dish-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LEVEL 1: Dish Identity */
+.dish-modal-header {
+  margin-bottom: 14px;
+  padding-right: 28px; /* Breathing room from close button */
+}
+
+.dish-modal-bn {
+  font-family: 'Tiro Bangla', 'Noto Serif Bengali', serif;
+  font-size: 1.05rem;
+  color: #A45D25;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.dish-modal-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dish-modal-title {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: 1.62rem;
+  color: #4A1118;
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  flex: 1;
+  min-width: 180px;
+}
+
+.dish-modal-price {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #A45D25;
+  white-space: nowrap;
+}
+
+/* LEVEL 2: Essential Information (Short Appetizing Description) */
+.dish-modal-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #453432;
+  margin: 0 0 18px 0;
+  font-weight: 400;
+}
+
+/* LEVEL 3: Supporting Details (Compact single/two-line meta) */
+.dish-modal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.dish-diet-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.dish-diet-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.dish-diet-badge.non-veg {
+  color: #A31D1D;
+  background: rgba(163, 29, 29, 0.08);
+  border: 1px solid rgba(163, 29, 29, 0.28);
+}
+
+.dish-diet-badge.non-veg .diet-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #A31D1D;
+}
+
+.dish-diet-badge.veg {
+  color: #2E7D32;
+  background: rgba(46, 125, 50, 0.08);
+  border: 1px solid rgba(46, 125, 50, 0.28);
+}
+
+.dish-diet-badge.veg .diet-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2E7D32;
+}
+
+.dish-ingredients-row {
+  line-height: 1.45;
+}
+
+.dish-ingredients-text {
+  color: #6C524F;
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+.dish-pairing-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.83rem;
+  color: #6C524F;
+}
+
+.dish-pairing-row .pairing-icon {
+  color: #C17D3C;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.dish-pairing-row .pairing-label {
+  font-weight: 700;
+  color: #4A1118;
+}
+
+.dish-pairing-row .pairing-dish {
+  color: #553D3A;
+}
+
+/* LEVEL 4: Primary Action (Clear Reserve a Table CTA) */
+.dish-modal-footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(74, 17, 24, 0.12);
+  margin-top: auto;
+}
+
+.btn-reserve-dish {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #4A1118;
+  color: #FAF5EE;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(74, 17, 24, 0.22);
+  transition: all 0.25s ease;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+
+.btn-reserve-dish:hover {
+  background-color: #350B10;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(74, 17, 24, 0.32);
+}
+
+.btn-reserve-dish:focus-visible {
+  outline: 2px solid #C17D3C;
+  outline-offset: 2px;
+}
+
+.btn-reserve-dish .btn-arrow {
+  transition: transform 0.25s ease;
+}
+
+.btn-reserve-dish:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Hover hint on menu cards */
+.card {
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(74, 17, 24, 0.12);
+}
+
+.card:focus-visible {
+  outline: 2px solid #C17D3C;
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .dish-modal-backdrop {
+    padding: 24px;
+  }
+
+  .dish-modal-dialog {
+    grid-template-columns: 1fr 1.2fr;
+    max-width: 720px;
+    max-height: 88vh;
+    border-radius: 18px;
+  }
+
+  .dish-modal-visual {
+    min-height: 340px;
+  }
+
+  .dish-modal-content {
+    padding: 26px 24px 20px;
+  }
+
+  .dish-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .dish-modal-close {
+    width: 38px;
+    height: 38px;
+    top: 14px;
+    right: 16px;
+  }
+}
+
+/* Mobile (<= 767px) */
+@media (max-width: 767px) {
+  .dish-modal-backdrop {
+    padding: 12px 10px;
+    align-items: flex-end;
+  }
+
+  .dish-modal-dialog {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-height: 90vh;
+    border-radius: 20px 20px 14px 14px;
+    transform: translateY(40px);
+    overflow-y: auto;
+  }
+
+  .dish-modal-visual {
+    height: 220px;
+    min-height: 220px;
+    max-height: 240px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .dish-modal-close {
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    background: rgba(20, 6, 8, 0.85);
+    color: #FAF5EE;
+    border: 1px solid rgba(226, 173, 114, 0.45);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  }
+
+  .dish-modal-close:hover {
+    background: #4A1118;
+    color: #FAF5EE;
+  }
+
+  .dish-modal-content {
+    padding: 20px 18px 18px;
+    max-height: none;
+  }
+
+  .dish-modal-header {
+    padding-right: 0;
+    margin-bottom: 12px;
+  }
+
+  .dish-modal-bn {
+    font-size: 0.98rem;
+  }
+
+  .dish-modal-title {
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .dish-modal-price {
+    font-size: 1.25rem;
+  }
+
+  .dish-modal-description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .dish-modal-meta {
+    margin-bottom: 18px;
+    gap: 8px;
+  }
+
+  .dish-diet-row {
+    font-size: 0.8rem;
+  }
+
+  .dish-ingredients-text {
+    font-size: 0.8rem;
+  }
+
+  .dish-pairing-row {
+    font-size: 0.8rem;
+  }
+
+  .dish-modal-footer {
+    padding-top: 14px;
+  }
+
+  .btn-reserve-dish {
+    min-height: 48px;
+    font-size: 0.94rem;
+  }
+}

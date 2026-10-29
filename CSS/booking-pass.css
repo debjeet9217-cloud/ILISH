@@ -1,0 +1,500 @@
+/* ==========================================================================
+   ILISH · Taste of Bengal — Digital Boarding Pass & Active Booking Modal
+   ========================================================================== */
+
+/* Navbar Active Booking Pill (Removed from nav) */
+.nav-booking-pill {
+  display: none !important;
+}
+
+.nav-booking-pill:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #5C151E 0%, #350B10 100%);
+  border-color: #C17D3C;
+  box-shadow: 0 6px 20px rgba(193, 125, 60, 0.35);
+}
+
+.nav-booking-pill .pill-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #2E7D32;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #4CAF50;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* Modal Backdrop */
+.pass-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 6, 8, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.pass-modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ticket Container */
+.boarding-pass-card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  background-color: #FAF6F0;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(193, 125, 60, 0.35);
+  transform: scale(0.94) translateY(15px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #382523;
+  font-family: var(--font-sans, system-ui);
+}
+
+.boarding-pass-card::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.pass-modal-backdrop.active .boarding-pass-card {
+  transform: scale(1) translateY(0);
+}
+
+/* Close Button */
+.pass-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(74, 17, 24, 0.08);
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: #4A1118;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.pass-close-btn:hover {
+  background: #4A1118;
+  color: #FAF6F0;
+  transform: rotate(90deg);
+}
+
+/* Pass Header */
+.pass-header {
+  background: linear-gradient(135deg, #4A1118 0%, #2A090D 100%);
+  color: #F8EFE7;
+  padding: 26px 26px 20px;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  position: relative;
+}
+
+.pass-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.pass-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pass-brand-name {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.pass-sub-brand {
+  font-size: 0.75rem;
+  color: #C17D3C;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pass-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(46, 125, 50, 0.2);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  color: #A5D6A7;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pass-headline {
+  margin-top: 4px;
+}
+
+.pass-title {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.55rem;
+  color: #FFFFFF;
+  margin-bottom: 2px;
+}
+
+.pass-ref-tag {
+  font-size: 0.82rem;
+  color: rgba(248, 239, 231, 0.75);
+  letter-spacing: 0.05em;
+}
+
+/* Countdown Bar */
+.pass-countdown-bar {
+  background-color: #380C11;
+  padding: 8px 26px;
+  font-size: 0.8rem;
+  color: #E2B77A;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(193, 125, 60, 0.25);
+  font-weight: 500;
+}
+
+/* Serrated Ticket Divider */
+.ticket-divider-strip {
+  position: relative;
+  height: 20px;
+  background-color: #FAF6F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.ticket-divider-strip::before,
+.ticket-divider-strip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: rgba(20, 6, 8, 0.75);
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.ticket-divider-strip::before {
+  left: -11px;
+}
+
+.ticket-divider-strip::after {
+  right: -11px;
+}
+
+.ticket-dashed-line {
+  width: 100%;
+  border-bottom: 2px dashed rgba(74, 17, 24, 0.2);
+  margin: 0 16px;
+}
+
+/* Pass Body Details */
+.pass-body {
+  padding: 10px 26px 24px;
+}
+
+.pass-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.pass-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pass-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(56, 37, 35, 0.6);
+  font-weight: 600;
+}
+
+.pass-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4A1118;
+}
+
+.pass-value.highlight {
+  color: #9C27B0;
+  font-weight: 700;
+}
+
+/* Pre-orders Block */
+.pass-dishes-block {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(74, 17, 24, 0.12);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.pass-dishes-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4A1118;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pass-dish-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pass-dish-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #382523;
+}
+
+.pass-dishes-total {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(74, 17, 24, 0.15);
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #4A1118;
+}
+
+/* QR Code & Verification Row */
+.pass-qr-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(193, 125, 60, 0.25);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 20px;
+}
+
+.pass-qr-box {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FDFBF8;
+  border-radius: 6px;
+  border: 1px solid rgba(74, 17, 24, 0.1);
+}
+
+.pass-qr-box svg {
+  width: 62px;
+  height: 62px;
+}
+
+.pass-qr-info {
+  flex: 1;
+}
+
+.pass-qr-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4A1118;
+  margin-bottom: 3px;
+}
+
+.pass-qr-sub {
+  font-size: 0.75rem;
+  color: rgba(56, 37, 35, 0.7);
+  line-height: 1.4;
+}
+
+/* Actions */
+.pass-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pass-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 18px;
+  background-color: #4A1118;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(74, 17, 24, 0.2);
+}
+
+.pass-btn-primary:hover {
+  background-color: #350B10;
+  transform: translateY(-1px);
+}
+
+.pass-secondary-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.pass-btn-secondary {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  background: transparent;
+  color: #4A1118;
+  border: 1.5px solid rgba(74, 17, 24, 0.25);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.pass-btn-secondary:hover {
+  border-color: #4A1118;
+  background-color: rgba(74, 17, 24, 0.05);
+}
+
+.pass-btn-danger {
+  color: #C62828;
+  border-color: rgba(198, 40, 40, 0.3);
+}
+
+.pass-btn-danger:hover {
+  border-color: #C62828;
+  background-color: rgba(198, 40, 40, 0.06);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT OVERRIDES (TABLET & MOBILE ONLY)
+   Desktop layout (PC & Laptop > 1024px) is strictly preserved from baseline CSS.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   VIEWPOINT 3: TABLET (iPads & Tablets Portrait & Landscape, 768px - 1024px)
+   Dedicated Tablet UX Persona:
+   - Proportional luxury ticket sizing
+   - Touch-friendly action buttons
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .boarding-pass-card {
+    max-width: 540px;
+  }
+  .pass-header {
+    padding: 24px 28px 18px;
+  }
+  .pass-body {
+    padding: 14px 28px 24px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   VIEWPOINT 4: MOBILE (Smartphones, <= 767px)
+   Dedicated Mobile UX Persona:
+   - Fluid width ticket with perforated edges
+   - 1-Column detail grid for readability
+   - Full-width stacked action buttons
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .active-booking-container {
+    padding: 16px 12px;
+  }
+
+  .boarding-pass-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .pass-header {
+    padding: 20px 18px 16px;
+  }
+
+  .pass-body {
+    padding: 12px 18px 20px;
+  }
+
+  .pass-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pass-qr-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding: 16px 0 10px;
+  }
+
+  .pass-secondary-actions {
+    flex-direction: column;
+  }
+
+  .pass-btn-secondary {
+    min-height: 44px;
+  }
+}
+

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu · The Taste of Bengal · ILISH</title>
+  <link rel="stylesheet" href="FONT/style.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/menu.css">
+  <link rel="stylesheet" href="CSS/dish-modal.css">
+  <link rel="stylesheet" href="CSS/booking-pass.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4A1118">
+</head>
+<body>
+
+  <!-- Fixed Sticky Top Navigation Header -->
+  <header class="navbar" id="top">
+    <button class="nav-btn nav-menu-btn" id="navMenuBtn" type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="navDrawerBackdrop">
+      <svg class="hamburger-icon" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M1.5 2H18.5M1.5 7H18.5M1.5 12H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-menu-text">Menu</span>
+    </button>
+
+    <div class="nav-center">
+      <a href="index.html" class="logo-wrapper" aria-label="ILISH Home">
+        <img src="IMAGES/logo.webp" alt="ILISH Logo" class="logo-img">
+        <span class="logo-text-sub">ILISH</span>
+      </a>
+    </div>
+
+    <a href="reservation.html" class="nav-btn nav-reservation-btn" id="navReservationBtn" aria-label="Reservation">
+      <span class="reservation-text">Reservation</span>
+    </a>
+  </header>
+
+  <section class="hero">
+    <img src="IMAGES/alpona.webp" alt="" class="hero-alpona" aria-hidden="true">
+    <p class="eyebrow"><i></i>Heritage Bengali Cuisine</p>
+    <h1>A menu rooted<br>in Bengal.</h1>
+    <p class="hero-sub">Slow-cooked Hilsa, fragrant mustard curries and artisanal sweets, prepared the traditional way.</p>
+  </section>
+
+  <div class="toolbar" id="toolbar">
+    <div class="wrap tb">
+      <nav class="chips" aria-label="Menu categories">
+        <button class="chip active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="fish" type="button">Signature Fish</button>
+        <button class="chip" data-filter="meat" type="button">Meat &amp; Poultry</button>
+        <button class="chip" data-filter="veg" type="button">Vegetarian Mains</button>
+        <button class="chip" data-filter="desserts" type="button">Desserts</button>
+      </nav>
+      <label class="vegtoggle"><input type="checkbox" id="vegOnly"><span class="sw"></span>Vegetarian only</label>
+    </div>
+  </div>
+
+  <main class="wrap menu">
+    <section class="course" id="fish">
+      <header class="ch"><div><span class="script">From the river</span><h2>Signature Fish</h2></div><span class="cnt"></span></header>
+      <p class="note">Hilsa is a seasonal catch &mdash; availability may vary.</p>
+      <div class="grid">
+        <article class="card" data-category="fish" data-dish-key="doi_ilish" data-veg="0" data-w="2">
+          <div class="ph"><img src="IMAGES/doi_ilish.webp" alt="Doi Ilish" loading="lazy" decoding="async"><span class="dt"><i class="vm nv"></i>Non-veg</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Chef's Signature</span><span class="sp" aria-label="Spice level: Medium"><i class="on"></i><i class="on"></i><i></i> Medium</span></div>
+            <div class="nm"><h3>Doi Ilish</h3><b>₹1,450</b></div>
+            <p>Fresh Hilsa steak simmered in mustard seeds and creamy yoghurt gravy with green chillies.</p>
+          </div>
+        </article>
+        <article class="card" data-category="fish" data-dish-key="chingri_malaikari" data-veg="0" data-w="1">
+          <div class="ph"><img src="IMAGES/chingri_malaikari.webp" alt="Chingri Malaikari" loading="lazy" decoding="async"><span class="dt"><i class="vm nv"></i>Non-veg</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Royal Feast</span><span class="sp" aria-label="Spice level: Mild"><i class="on"></i><i></i><i></i> Mild</span></div>
+            <div class="nm"><h3>Chingri Malaikari</h3><b>₹1,650</b></div>
+            <p>Jumbo prawns in a silky coconut milk curry with whole aromatic spices and ghee.</p>
+          </div>
+        </article>
+        <article class="card" data-category="fish" data-dish-key="ilish_paturi" data-veg="0" data-w="1">
+          <div class="ph"><img src="IMAGES/ilish_paturi.webp" alt="Bhetki Macher Paturi" loading="lazy" decoding="async"><span class="dt"><i class="vm nv"></i>Non-veg</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Banana Leaf Wrap</span><span class="sp" aria-label="Spice level: Medium"><i class="on"></i><i class="on"></i><i></i> Medium</span></div>
+            <div class="nm"><h3>Bhetki Macher Paturi</h3><b>₹1,550</b></div>
+            <p>Bhetki fillet in pungent mustard paste and green chillies, wrapped in banana leaf and steamed.</p>
+          </div>
+        </article>
+        <article class="card" data-category="fish" data-dish-key="ilish_macher_jhol" data-veg="0" data-w="1">
+          <div class="ph"><img src="IMAGES/ilish_macher_jhol.webp" alt="Ilish Macher Jhol" loading="lazy" decoding="async"><span class="dt"><i class="vm nv"></i>Non-veg</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Monsoon Special</span><span class="sp" aria-label="Spice level: Medium"><i class="on"></i><i class="on"></i><i></i> Medium</span></div>
+            <div class="nm"><h3>Ilish Macher Jhol</h3><b>₹1,350</b></div>
+            <p>Light Hilsa broth tempered with nigella seeds, tender potatoes and fresh green chillies.</p>
+          </div>
+        </article>
+        <article class="card" data-category="fish" data-dish-key="ilish_kalia" data-veg="0" data-w="1">
+          <div class="ph"><img src="IMAGES/ilish_kalia.webp" alt="Ilish Kalia" loading="lazy" decoding="async"><span class="dt"><i class="vm nv"></i>Non-veg</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Festive Classic</span><span class="sp" aria-label="Spice level: Hot"><i class="on"></i><i class="on"></i><i class="on"></i> Hot</span></div>
+            <div class="nm"><h3>Ilish Kalia</h3><b>₹1,450</b></div>
+            <p>Slow-cooked Hilsa curry with caramelized onions, whole spices and fragrant mustard oil.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="course" id="meat">
+      <header class="ch"><div><span class="script">From the hearth</span><h2>Meat &amp; Poultry</h2></div><span class="cnt"></span></header>
+      <div class="grid">
+        <article class="card" data-category="meat" data-dish-key="kosha_mangsho" data-veg="0" data-w="2">
+          <div class="ph"><img src="IMAGES/kosha_mangsho.webp" alt="Kosha Mangsho" loading="lazy" decoding="async"><span class="dt"><i class="vm nv"></i>Non-veg</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Bengali Heritage</span><span class="sp" aria-label="Spice level: Hot"><i class="on"></i><i class="on"></i><i class="on"></i> Hot</span></div>
+            <div class="nm"><h3>Kosha Mangsho</h3><b>₹1,250</b></div>
+            <p>Slow-roasted tender mutton in a dark, spicy onion-garlic gravy with golden fried potatoes.</p>
+          </div>
+        </article>
+        <article class="card" data-category="meat" data-dish-key="chicken_dakbungalow" data-veg="0" data-w="1">
+          <div class="ph"><img src="IMAGES/chicken_dakbungalow.webp" alt="Chicken Dakbungalow" loading="lazy" decoding="async"><span class="dt"><i class="vm nv"></i>Non-veg</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Colonial Recipe</span><span class="sp" aria-label="Spice level: Medium"><i class="on"></i><i class="on"></i><i></i> Medium</span></div>
+            <div class="nm"><h3>Chicken Dakbungalow</h3><b>₹950</b></div>
+            <p>Country chicken curry with hard-boiled eggs and roasted spices, inspired by British-era rest houses.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="course" id="sweet">
+      <header class="ch"><div><span class="script">Garden &amp; sweet end</span><h2>Vegetarian &amp; Desserts</h2></div><span class="cnt"></span></header>
+      <div class="grid">
+        <article class="card" data-category="veg" data-dish-key="aloo_posto" data-veg="1" data-w="1">
+          <div class="ph"><img src="IMAGES/posto.webp" alt="Aloo Posto" loading="lazy" decoding="async"><span class="dt"><i class="vm v"></i>Vegetarian</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Comfort Classic</span><span class="sp" aria-label="Spice level: Mild"><i class="on"></i><i></i><i></i> Mild</span></div>
+            <div class="nm"><h3>Aloo Posto</h3><b>₹650</b></div>
+            <p>Potato cubes cooked in smooth, fragrant poppy seed paste with green chillies.</p>
+          </div>
+        </article>
+        <article class="card" data-category="veg" data-dish-key="chanar_dalna" data-veg="1" data-w="1">
+          <div class="ph"><img src="IMAGES/chanardalna.webp" alt="Chanar Dalna" loading="lazy" decoding="async"><span class="dt"><i class="vm v"></i>Vegetarian</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Temple Tradition</span><span class="sp" aria-label="Spice level: Mild"><i class="on"></i><i></i><i></i> Mild</span></div>
+            <div class="nm"><h3>Chanar Dalna</h3><b>₹750</b></div>
+            <p>Hand-kneaded chenna koftas simmered in an aromatic cumin-ginger jus without onion or garlic.</p>
+          </div>
+        </article>
+        <article class="card" data-category="desserts" data-dish-key="mishti_doi" data-veg="1" data-w="1">
+          <div class="ph"><img src="IMAGES/mishti_doi.webp" alt="Mishti Doi and Roshogolla" loading="lazy" decoding="async"><span class="dt"><i class="vm v"></i>Vegetarian</span></div>
+          <div class="bd">
+            <div class="meta"><span class="script">Sweet Tradition</span></div>
+            <div class="nm"><h3>Mishti Doi &amp; Roshogolla</h3><b>₹450</b></div>
+            <p>Caramelized sweet yoghurt set in earthen pots, with soft Roshogolla in cardamom syrup.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <p class="allergy">Please tell your server about any allergies before ordering.</p>
+  </main>
+
+  <section class="cta">
+    <div class="cta-in">
+      <p class="eyebrow gold"><i></i>Join us</p>
+      <h2>Your table is waiting.</h2>
+      <p class="cta-sub">Lunch and dinner, Tuesday to Sunday.</p>
+      <a href="reservation.html" class="btn">Reserve Your Table &rarr;</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap fg">
+      <div class="f-brand"><img src="IMAGES/logo.webp" alt=""><p>Crafted with tradition, stone-ground mustard, and cherished regional recipes passed through generations.</p></div>
+      <div><h4>Visit</h4><p>77 Park Street, Heritage District<br>Kolkata, West Bengal 700016</p></div>
+      <div><h4>Hours</h4><p><b>Lunch:</b> Tue &ndash; Sun, 12:00 PM &ndash; 3:30 PM<br><b>Dinner:</b> Tue &ndash; Sun, 6:30 PM &ndash; 10:30 PM<br><b>Mondays:</b> Closed</p></div>
+      <div><h4>Contact</h4><p>Table Reservations &amp; Enquiries<br>+91 98765 43210<br><a href="reservation.html">Reserve a Table &rarr;</a></p></div>
+      <small>&copy; 2026 The Taste of Bengal. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Site Navigation Menu Drawer -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <aside class="nav-drawer">
+      <!-- Faint Alpona Watermark in Bottom-Right Corner -->
+      <img src="IMAGES/alpona.webp" alt="" class="nav-drawer-faint-alpona" aria-hidden="true">
+
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <div class="drawer-brand-header">
+            <img src="IMAGES/logo.webp" alt="ILISH Logo" class="drawer-brand-logo" aria-hidden="true">
+            <span class="drawer-tag">ILISH</span>
+          </div>
+          <h2 class="drawer-title">EXPLORE BENGAL</h2>
+        </div>
+        <button class="close-drawer-btn" id="closeNavDrawerBtn" type="button" aria-label="Close menu">&times;</button>
+      </div>
+
+      <div class="drawer-divider"></div>
+
+      <nav class="nav-drawer-menu" aria-label="Main Navigation">
+        <!-- 01 — HOME -->
+        <a href="index.html" class="nav-editorial-item">
+          <span class="nav-item-number">01</span>
+          <div class="nav-item-title-row">
+            <span class="nav-item-heading">HOME</span>
+            <span class="nav-item-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <span class="nav-item-subtext">Welcome to Bengal</span>
+        </a>
+
+        <!-- 02 — MENU -->
+        <a href="#top" class="nav-editorial-item active" data-nav-target="top">
+          <span class="nav-item-number">02</span>
+          <div class="nav-item-title-row">
+            <span class="nav-item-heading">MENU</span>
+            <span class="nav-item-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <span class="nav-item-subtext">Explore Bengali Flavours</span>
+        </a>
+
+        <!-- 03 — OUR STORY -->
+        <a href="index.html#food-story" class="nav-editorial-item">
+          <span class="nav-item-number">03</span>
+          <div class="nav-item-title-row">
+            <span class="nav-item-heading">OUR STORY</span>
+            <span class="nav-item-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <span class="nav-item-subtext">From River to Table</span>
+        </a>
+
+        <!-- 04 — RESERVATION -->
+        <a href="reservation.html" class="nav-editorial-item nav-reservation-cta">
+          <span class="nav-item-number">04</span>
+          <div class="nav-item-title-row">
+            <span class="nav-item-heading">RESERVATION</span>
+            <span class="nav-item-arrow" aria-hidden="true">&rarr;</span>
+          </div>
+          <span class="nav-item-subtext">Reserve Your Table</span>
+        </a>
+      </nav>
+
+      <div class="drawer-divider"></div>
+
+      <div class="nav-drawer-footer-editorial">
+        <span class="nav-footer-brand">ILISH</span>
+        <a href="https://maps.google.com/?q=77+Park+Street+Kolkata" target="_blank" rel="noopener noreferrer" class="nav-footer-address">
+          77 Park Street, Kolkata
+        </a>
+        <a href="tel:+919876543210" class="nav-footer-phone">+91 98765 43210</a>
+        <div class="nav-footer-hours">
+          <span class="hours-label">HOURS:</span> Tue – Sun, 12 PM – 11 PM
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="JS/main.js"></script>
+  <script>
+    const cards = [...document.querySelectorAll('.card')];
+    const courses = [...document.querySelectorAll('.course')];
+    const chips = [...document.querySelectorAll('.chip')];
+    const vegOnly = document.getElementById('vegOnly');
+    let cat = 'all';
+
+    const match = (c, f = cat) =>
+      (f === 'all' || c.dataset.category === f) && (!vegOnly.checked || c.dataset.veg === '1');
+
+    function layout(grid) {
+      const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+      const vis = [...grid.children].filter(c => !c.hidden);
+      vis.forEach(c => { c.classList.remove('solo'); c.style.gridColumn = ''; });
+      if (!vis.length) return;
+      if (vis.length === 1) {
+        vis[0].classList.add('solo', 'wide');
+        vis[0].style.gridColumn = '1 / -1';
+        return;
+      }
+      vis.forEach(c => c._w = Math.min(+c.dataset.w, cols));
+      let gap = (cols - vis.reduce((a, c) => a + c._w, 0) % cols) % cols;
+      for (let i = vis.length - 1; i >= 0 && gap > 0; i--) {
+        const add = Math.min(gap, cols - vis[i]._w);
+        vis[i]._w += add; gap -= add;
+      }
+      vis.forEach(c => {
+        c.style.gridColumn = 'span ' + c._w;
+        c.classList.toggle('wide', c._w > 1);
+      });
+    }
+
+    function render(animate) {
+      cards.forEach(c => {
+        c.hidden = !match(c);
+        if (animate && !c.hidden) { c.classList.remove('in'); void c.offsetWidth; c.classList.add('in'); }
+      });
+      courses.forEach(s => {
+        const n = [...s.querySelectorAll('.card')].filter(c => !c.hidden).length;
+        s.hidden = n === 0;
+        s.querySelector('.cnt').textContent = n + (n === 1 ? ' dish' : ' dishes');
+        layout(s.querySelector('.grid'));
+      });
+      chips.forEach(ch => {
+        const n = cards.filter(c => match(c, ch.dataset.filter)).length;
+        let em = ch.querySelector('em');
+        if (!em) { em = document.createElement('em'); ch.append(em); }
+        em.textContent = n;
+      });
+    }
+
+    chips.forEach(ch => ch.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      ch.classList.add('active');
+      cat = ch.dataset.filter;
+      render(true);
+      const top = document.querySelector('.menu').getBoundingClientRect().top + scrollY - 150;
+      if (scrollY > top) scrollTo({ top, behavior: 'smooth' });
+    }));
+    vegOnly.addEventListener('change', () => render(true));
+    addEventListener('resize', () => render(false));
+    render(false);
+  </script>
+  <script src="JS/booking-pass.js"></script>
+  <script src="JS/dish-modal.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

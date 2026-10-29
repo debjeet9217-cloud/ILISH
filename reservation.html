@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserve a Table · ILISH · Taste of Bengal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Tiro+Bangla&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="FONT/style.css">
+  <link rel="stylesheet" href="CSS/reservation.css">
+  <link rel="stylesheet" href="CSS/booking-pass.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4A1118">
+</head>
+<body>
+
+  <!-- Editorial Header Navigation -->
+  <header class="site">
+    <a href="index.html" class="nav-back-link">
+      <span class="arrow">&larr;</span> Back to Home
+    </a>
+
+    <a class="logo" href="index.html" aria-label="ILISH Home">
+      <img src="IMAGES/logo.webp" alt="ILISH Logo" class="logo-img">
+      <b>ILISH</b>
+    </a>
+
+    <span class="nav-page-title">RESERVATION</span>
+  </header>
+
+  <div class="page">
+
+    <!-- Left Column: Brand, Story & Signature Reservation Slip -->
+    <aside class="photo">
+      <!-- Story Photos -->
+      <div class="ph on" data-s="river"></div>
+      <div class="ph" data-s="catch"></div>
+      <div class="ph" data-s="table"></div>
+
+      <!-- Top Brand Story Header -->
+      <div class="brand-story-header">
+        <span class="brand-eyebrow">ILISH · RESERVATION</span>
+        <blockquote class="story-quote">
+          “A table by the river, a plate at the centre, and Bengali food worth sitting down for.”
+        </blockquote>
+        <div class="bn-greeting">
+          <span class="bn-text">Your table awaits.</span>
+        </div>
+      </div>
+
+      <!-- Story Chapter Indicator -->
+      <div class="story-chapter-bar">
+        <div class="chapter-item on" data-chap="river">
+          <span class="chap-num">01</span>
+          <span class="chap-title">THE RIVER</span>
+        </div>
+        <div class="chapter-item" data-chap="catch">
+          <span class="chap-num">02</span>
+          <span class="chap-title">THE FISH</span>
+        </div>
+        <div class="chapter-item" data-chap="table">
+          <span class="chap-num">03</span>
+          <span class="chap-title">THE TABLE</span>
+        </div>
+      </div>
+
+      <!-- Story Caption -->
+      <div class="cap">
+        <span class="it" id="capA">THE RIVER</span>
+        <h2 id="capB">Hilsa begins here.</h2>
+      </div>
+
+      <!-- Signature Reservation Slip Card -->
+      <div class="slip" aria-label="Your reservation slip">
+        <div class="slip-header">
+          <span class="slip-brand-name">ILISH</span>
+          <span class="slip-tag">TABLE RESERVATION</span>
+        </div>
+        
+        <div class="slip-divider"></div>
+
+        <div class="slip-body">
+          <div class="slip-row">
+            <span class="slip-label">YOUR TABLE</span>
+            <div class="slip-hero-val"><span id="sG">02</span> <small>GUESTS</small></div>
+          </div>
+
+          <div class="slip-grid-2">
+            <div class="slip-col">
+              <span class="slip-label">DATE</span>
+              <span class="slip-val" id="sD">Select Date</span>
+            </div>
+            <div class="slip-col">
+              <span class="slip-label">TIME</span>
+              <span class="slip-val" id="sT">Select Time</span>
+            </div>
+          </div>
+
+          <div class="slip-divider dotted"></div>
+
+          <div class="slip-footer-row">
+            <div class="slip-col">
+              <span class="slip-label">SEATING</span>
+              <span class="slip-subval" id="sTableType">Intimate Dining Table</span>
+            </div>
+            <div class="slip-col" style="text-align: right;">
+              <span class="slip-label">PRE-ORDER</span>
+              <span class="slip-subval" id="sI">None</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slip-perforation"></div>
+      </div>
+    </aside>
+
+    <!-- Main Booking Form Flow (Right Column) -->
+    <main class="form">
+      <div class="inner">
+        
+        <!-- Minimal Progress Indicator -->
+        <div class="progress">
+          <div class="progress-step-indicator" id="stepIndicator">
+            <span class="step-badge">STEP 01 OF 05</span>
+            <span class="step-name" id="stepTxt">When are you joining us?</span>
+          </div>
+          <div class="bars" id="bars">
+            <i class="on"></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+
+        <!-- STEP 01: DATE & TIME -->
+        <section class="pane" id="p1">
+          <span class="eyebrow">Step 01</span>
+          <h1 class="big">When are you joining us?</h1>
+          <p class="lead">Select your preferred dining date and time slot.</p>
+
+          <!-- Day Selection -->
+          <div class="q-block">
+            <label class="section-label">Select Dining Date</label>
+            <div class="grid g3" id="days"></div>
+            <div class="picker-row">
+              <button class="link-btn" id="otherBtn" type="button">+ Select later date</button>
+              <input type="date" id="pick" aria-label="Pick another date" hidden>
+            </div>
+            <div class="alert" id="monday" hidden>
+              We are closed on Mondays. Please select another dining date.
+            </div>
+          </div>
+
+          <!-- Time Slot Selection -->
+          <div class="q-block" id="timeBlock" style="margin-top:28px">
+            <label class="section-label">Select Dining Time</label>
+            <div class="seg" id="seg">
+              <button type="button" class="opt-tab" data-s="lunch" aria-pressed="false">
+                <span>Lunch <small>12:00 – 3:30 PM</small></span>
+              </button>
+              <button type="button" class="opt-tab" data-s="dinner" aria-pressed="true">
+                <span>Dinner <small>6:30 – 10:30 PM</small></span>
+              </button>
+            </div>
+            <div class="grid slots" id="slots"></div>
+            <div class="alert" id="full" hidden></div>
+          </div>
+        </section>
+
+        <!-- STEP 02: GUEST COUNT & SEATING -->
+        <section class="pane" id="p2" hidden>
+          <span class="eyebrow">Step 02</span>
+          <h1 class="big">How many at the table?</h1>
+          <p class="lead">Choose your party size for appropriate table placement.</p>
+
+          <div class="guest-card">
+            <div class="guest-card-header">
+              <div class="guest-card-title">
+                <span class="card-label">PARTY SIZE</span>
+                <b id="cntBn">2 Guests</b>
+              </div>
+              <div class="guest-stepper">
+                <button type="button" class="step-btn" id="btnMinus" aria-label="Decrease guests">&minus;</button>
+                <span class="step-num" id="stepVal">2</span>
+                <button type="button" class="step-btn" id="btnPlus" aria-label="Increase guests">&plus;</button>
+              </div>
+            </div>
+
+            <div class="guest-chips-grid" id="seatsGrid" role="radiogroup" aria-label="Select number of guests">
+              <button type="button" class="seat-chip" data-n="1" role="radio" aria-checked="false">1</button>
+              <button type="button" class="seat-chip on" data-n="2" role="radio" aria-checked="true">2</button>
+              <button type="button" class="seat-chip" data-n="3" role="radio" aria-checked="false">3</button>
+              <button type="button" class="seat-chip" data-n="4" role="radio" aria-checked="false">4</button>
+              <button type="button" class="seat-chip" data-n="5" role="radio" aria-checked="false">5</button>
+              <button type="button" class="seat-chip" data-n="6" role="radio" aria-checked="false">6</button>
+              <button type="button" class="seat-chip" data-n="7" role="radio" aria-checked="false">7</button>
+              <button type="button" class="seat-chip" data-n="8" role="radio" aria-checked="false">8</button>
+            </div>
+
+            <div class="table-spec-box">
+              <span class="spec-label">ASSIGNED SEATING</span>
+              <b id="tableTypeTitle">Intimate Dining Table</b>
+              <span id="tableTypeSub">Ideal for couples with soft ambient lighting and river view</span>
+            </div>
+          </div>
+          
+          <p class="hint-text">
+            For parties larger than 8, please <a href="tel:+919876543210" class="inline-link">call +91 98765 43210</a> for heritage hall reservations.
+          </p>
+        </section>
+
+        <!-- STEP 03: CONTACT DETAILS -->
+        <section class="pane" id="p3" hidden>
+          <span class="eyebrow">Step 03</span>
+          <h1 class="big">Tell us where to reach you</h1>
+          <p class="lead">We will send your table approval notification to these details.</p>
+          
+          <div class="field" id="fName">
+            <label class="field-label" for="name">FULL NAME *</label>
+            <input type="text" id="name" autocomplete="name" placeholder="e.g. Anirban Roy" class="editorial-input">
+            <div class="err">Please enter your full name.</div>
+          </div>
+
+          <div class="field" id="fPhone">
+            <label class="field-label" for="phone">MOBILE PHONE NUMBER *</label>
+            <div class="phone-input-wrap">
+              <span class="prefix">+91</span>
+              <input type="tel" id="phone" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="98765 43210" class="editorial-input">
+            </div>
+            <div class="err">Enter a valid 10-digit mobile number.</div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="email">EMAIL ADDRESS <span class="opt-tag">(OPTIONAL)</span></label>
+            <input type="email" id="email" autocomplete="email" placeholder="anirban@example.com" class="editorial-input">
+          </div>
+        </section>
+
+        <!-- STEP 04: EXPERIENCE & NOTES -->
+        <section class="pane" id="p4" hidden>
+          <span class="eyebrow">Step 04</span>
+          <h1 class="big">Anything we should know?</h1>
+          <p class="lead">Share dietary requirements, special occasions, or dish pre-orders.</p>
+
+          <div class="field">
+            <div class="pre-header-row">
+              <label class="field-label">PRE-ORDER DISHES <span class="opt-tag">(OPTIONAL)</span></label>
+              <button type="button" class="browse-menu-btn" id="openMenuModalBtn">
+                Browse Full Menu &rarr;
+              </button>
+            </div>
+
+            <div id="pre" class="dish-grid" role="group">
+              <button type="button" class="dish-card" data-v="Doi Ilish" aria-pressed="false">
+                <b>Doi Ilish</b>
+                <small>Mustard & yoghurt gravy</small>
+              </button>
+              <button type="button" class="dish-card" data-v="Ilish Paturi" aria-pressed="false">
+                <b>Ilish Paturi</b>
+                <small>Banana leaf steamed</small>
+              </button>
+              <button type="button" class="dish-card" data-v="Chingri Malaikari" aria-pressed="false">
+                <b>Chingri Malaikari</b>
+                <small>Prawns in coconut curry</small>
+              </button>
+              <button type="button" class="dish-card" data-v="Kosha Mangsho" aria-pressed="false">
+                <b>Kosha Mangsho</b>
+                <small>Slow-cooked mutton</small>
+              </button>
+            </div>
+
+            <input type="text" id="customDishInput" placeholder="Or type dish names (e.g. Ilish Macher Jhol)..." class="editorial-input" style="margin-top:10px;">
+          </div>
+
+          <div class="field">
+            <label class="field-label">CELEBRATING AN OCCASION? <span class="opt-tag">(OPTIONAL)</span></label>
+            <div class="occ" id="occ">
+              <button type="button" class="occ-chip" aria-pressed="false">Family Gathering</button>
+              <button type="button" class="occ-chip" aria-pressed="false">Birthday</button>
+              <button type="button" class="occ-chip" aria-pressed="false">Anniversary</button>
+              <button type="button" class="occ-chip" aria-pressed="false">Business Dinner</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="req">SPECIAL REQUESTS / DIETARY NOTES</label>
+            <textarea id="req" placeholder="Window seat request, allergies, high chair needed..." class="editorial-textarea"></textarea>
+          </div>
+        </section>
+
+        <!-- STEP 05: REVIEW & REQUEST RESERVATION -->
+        <section class="pane" id="p5" hidden>
+          <span class="eyebrow">Step 05</span>
+          <h1 class="big">Review your reservation</h1>
+          <p class="lead">Please verify your reservation details before submitting your request.</p>
+
+          <!-- Formal Confirmation Reservation Card -->
+          <div class="slip review-slip" id="ticket"></div>
+
+          <div class="request-notice-box">
+            <div class="notice-icon">i</div>
+            <p class="notice-text">
+              We'll send your request to the restaurant. Your table is confirmed once the restaurant approves it.
+            </p>
+          </div>
+
+          <div class="action-submit-wrap">
+            <button type="button" class="btn-editorial-primary" id="waSend">
+              REQUEST RESERVATION &rarr;
+            </button>
+            <button type="button" class="link-btn" id="editBack" style="margin-top:12px;">
+              &larr; Edit Reservation Details
+            </button>
+          </div>
+
+          <!-- Post Submission Screen -->
+          <div class="sent-confirmation-card" id="sent" hidden>
+            <div class="conf-badge">REQUEST SENT</div>
+            <h2 class="conf-title">Reservation Request Sent</h2>
+            <span class="conf-ref" id="refCode">Reference IL-4821</span>
+            
+            <p class="conf-desc">
+              Your table request has been dispatched to Ilish. Our restaurant concierge will contact you shortly to confirm your booking.
+            </p>
+
+            <div class="conf-actions">
+              <a class="btn-editorial-secondary" id="waResend" target="_blank" rel="noopener">
+                Open WhatsApp Concierge &rarr;
+              </a>
+              <a href="index.html" class="link-btn" style="margin-top:10px;">Return to Home Page</a>
+            </div>
+          </div>
+        </section>
+
+        <p class="demo-footer" id="demo">ILISH · Taste of Bengal · Authentic Culinary Experience · Park Street, Kolkata</p>
+      </div>
+
+      <!-- Editorial Bottom Action Navigation Bar -->
+      <div class="actions" id="actions">
+        <div class="action-bar-inner">
+          <button class="btn-editorial-back" id="back" type="button" hidden>&larr; BACK</button>
+          <div class="action-summary-text" id="line">
+            <b>Select Date & Time to continue</b>
+          </div>
+          <button class="btn-editorial-next" id="next" type="button">
+            CONTINUE &rarr;
+          </button>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Full Menu Selection Modal -->
+  <div class="menu-modal-backdrop" id="menuModal" hidden>
+    <div class="menu-modal-content">
+      <div class="menu-modal-header">
+        <div>
+          <span class="modal-tag">HERITAGE SELECTION</span>
+          <h2 class="menu-modal-title">Pre-Order From Our Menu</h2>
+        </div>
+        <button type="button" class="close-modal-btn" id="closeMenuModalBtn" aria-label="Close Menu Modal">&times;</button>
+      </div>
+
+      <div class="menu-modal-body">
+        <p class="menu-modal-subtitle">Select dishes to reserve for your table:</p>
+
+        <div class="menu-modal-grid">
+          <!-- Doi Ilish -->
+          <div class="menu-modal-card" data-dish="Doi Ilish">
+            <img src="IMAGES/ChatGPT Image Aug 30, 2026, 03_25_11 AM.webp" alt="Doi Ilish" class="modal-card-img">
+            <div class="modal-card-info">
+              <div class="modal-card-head">
+                <h3>Doi Ilish</h3>
+                <span class="modal-card-price">₹1,450</span>
+              </div>
+              <p>Fresh Hilsa steak simmered in rich mustard seeds & yoghurt gravy.</p>
+              <button type="button" class="btn-select-dish" data-dish="Doi Ilish">+ Select Dish</button>
+            </div>
+          </div>
+
+          <!-- Ilish Paturi -->
+          <div class="menu-modal-card" data-dish="Ilish Paturi">
+            <img src="IMAGES/Gemini_Generated_Image_aahaaeaahaaeaaha.webp" alt="Ilish Paturi" class="modal-card-img">
+            <div class="modal-card-info">
+              <div class="modal-card-head">
+                <h3>Ilish Paturi</h3>
+                <span class="modal-card-price">₹1,550</span>
+              </div>
+              <p>Marinated Hilsa wrapped in banana leaf and gently steamed.</p>
+              <button type="button" class="btn-select-dish" data-dish="Ilish Paturi">+ Select Dish</button>
+            </div>
+          </div>
+
+          <!-- Chingri Malaikari -->
+          <div class="menu-modal-card" data-dish="Chingri Malaikari">
+            <img src="IMAGES/ChatGPT Image Aug 25, 2026, 09_32_23 PM.webp" alt="Chingri Malaikari" class="modal-card-img">
+            <div class="modal-card-info">
+              <div class="modal-card-head">
+                <h3>Chingri Malaikari</h3>
+                <span class="modal-card-price">₹1,650</span>
+              </div>
+              <p>Jumbo prawns in silky coconut milk curry with aromatic spices.</p>
+              <button type="button" class="btn-select-dish" data-dish="Chingri Malaikari">+ Select Dish</button>
+            </div>
+          </div>
+
+          <!-- Ilish Macher Jhol -->
+          <div class="menu-modal-card" data-dish="Ilish Macher Jhol">
+            <img src="IMAGES/ChatGPT Image Aug 25, 2026, 09_27_35 PM.webp" alt="Ilish Macher Jhol" class="modal-card-img">
+            <div class="modal-card-info">
+              <div class="modal-card-head">
+                <h3>Ilish Macher Jhol</h3>
+                <span class="modal-card-price">₹1,350</span>
+              </div>
+              <p>Classic light fish broth with nigella seeds & green chillies.</p>
+              <button type="button" class="btn-select-dish" data-dish="Ilish Macher Jhol">+ Select Dish</button>
+            </div>
+          </div>
+
+          <!-- Ilish Kalia -->
+          <div class="menu-modal-card" data-dish="Ilish Kalia">
+            <img src="IMAGES/ChatGPT Image Aug 30, 2026, 03_18_04 AM.webp" alt="Ilish Kalia" class="modal-card-img">
+            <div class="modal-card-info">
+              <div class="modal-card-head">
+                <h3>Ilish Kalia</h3>
+                <span class="modal-card-price">₹1,450</span>
+              </div>
+              <p>Festive slow-cooked Hilsa curry with caramelized onions.</p>
+              <button type="button" class="btn-select-dish" data-dish="Ilish Kalia">+ Select Dish</button>
+            </div>
+          </div>
+
+          <!-- Kosha Mangsho -->
+          <div class="menu-modal-card" data-dish="Kosha Mangsho">
+            <img src="IMAGES/Kosha Mangsho in Terracotta Bowl.webp" alt="Kosha Mangsho" class="modal-card-img">
+            <div class="modal-card-info">
+              <div class="modal-card-head">
+                <h3>Kosha Mangsho</h3>
+                <span class="modal-card-price">₹1,250</span>
+              </div>
+              <p>Slow-cooked velvety Bengali mutton curry with roasted spices.</p>
+              <button type="button" class="btn-select-dish" data-dish="Kosha Mangsho">+ Select Dish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-modal-footer">
+        <div class="selected-summary">
+          <span>SELECTED:</span>
+          <b id="modalSelectedList">None</b>
+        </div>
+        <button type="button" class="btn-editorial-primary" id="confirmModalSelectionBtn">APPLY SELECTION &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/booking-pass.js"></script>
+  <script src="JS/reservation.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
